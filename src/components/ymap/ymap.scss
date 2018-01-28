@@ -1,0 +1,15 @@
+@import '~styles/mixins';
+
+.map {
+    max-width: 536px;
+    height: 300px;
+    @include shadow_light();
+    @include border_light();   
+}
+
+@media (max-width: 1920px) {
+    .map {
+        width: 536px;
+        height: 300px;
+    }
+}

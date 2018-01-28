@@ -1,0 +1,32 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.notification {
+
+    .notification__header {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .notification__content {
+        margin-top: 4px;
+    }
+
+    &.notification_error {
+        background-color: $notification_error_color;
+    }
+
+    &.notification_success {
+        background-color: $notification_success_color;
+    }
+
+    @include shadow_light();
+    width: 228px;
+    height: 64px;
+    padding: 12px;
+    position: fixed;
+    right: 10px;
+    top: 5px;
+    border-left: 10px solid rgba(255,255,255,.2);
+}

@@ -1,0 +1,81 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.input-field {
+    width: 520px;
+    background-color: white;
+    margin: 50px 0 0;
+    padding: 8px;
+    text-align: center;
+    @include shadow_light();
+    @include border_light();
+    
+    > .input-field__header {
+        font-weight: 300;
+        padding-bottom: 5px;
+    }
+    
+    > .input-field__input {
+        width: 60%;      
+        margin: 0 auto;
+
+        .input__form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .input__errors-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            .errors-list__item {
+                font-size: 12px;
+                text-align: left;
+                padding-top: 2px;
+                color: red;
+            }
+        }
+
+        .input {
+            height: 52px;
+            font-size: 23px;
+            margin: 10 0 auto;
+            padding: 0 8px;
+
+            &.input_theme_light {
+                @include border_light();
+
+                &:focus {
+                    outline: 2px $main_color solid;
+                }
+            }
+        }
+
+        .button {
+            width: 100%;
+            height: 35px;
+            margin-top: 5px;
+            background-color: $btn_color;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+
+            &:hover {
+                cursor: pointer
+            }
+        }
+    }
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
