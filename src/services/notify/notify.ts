@@ -7,7 +7,8 @@ const TYPES = {
 const MESSAGES = {
      city_not_found: 'Город с таким названием не найден',
      city_is_found: 'Город с таким названием найден',
-     duplicated_answer: 'Город с таким названием уже был назван'
+     duplicated_answer: 'Город с таким названием уже был назван',
+     you_win: 'Вы выиграли!'
 }
 
 const getSuccessNotification = (successText: string) => {

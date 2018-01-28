@@ -30,7 +30,13 @@ const FieldComponent = Vue.extend({
             });
             this.emitter.$on('userAnswered', () => {
                 this.waiting = true;
+                this.city = '';
             });
+        },
+        finish() {
+            this.emitter.$emit('finishGame');
+            this.city = '';
+            window.scrollBy(0, 300);
         }
     },
     mounted() {

@@ -1,9 +1,9 @@
 <template>
   <div id="app" class="container">
       <div class="container__header">
-        
+          <div class="header__text">YandexCities Game</div>
       </div>
-      <div class="container__main-content">
+      <div class="container__main-content" v-bind:class="{ report: showReport }">
           <div class="main-content__left-side">
             <ymap></ymap>
             <field></field>
@@ -13,7 +13,9 @@
               <bot></bot>
           </div>
       </div>
-      <div class="container__footer"></div>
+      <div class="container__report">
+        <report v-if="showReport"></report>
+      </div>
       <div class="container__notifications">
           <notify v-show="showNotify" 
                   :type="notificationOptions.type"

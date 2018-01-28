@@ -2,6 +2,7 @@
 @import '~styles/mixins';
 
 .notification {
+    z-index: 9;
 
     .notification__header {
         margin: 0;

@@ -21,6 +21,10 @@ const YmapComponent = Vue.extend({
         },
         initListeners() {
             this.emitter.$on('addCity', this.findCity);
+            this.emitter.$on('tryAgain', () => {
+                answer.ACTIONS.removeAnswers();
+                this.map.geoObjects.removeAll();
+            });
         },
         findCity(data: any) {
             let {city, user = true} = data;
@@ -36,7 +40,11 @@ const YmapComponent = Vue.extend({
                                     let isLocality = ['locality', 'province'].indexOf(geo.properties.get('metaDataProperty').GeocoderMetaData.kind) !== -1;
                                     if (isLocality) {
                                         geo.options.set('preset', 'islands#circleIcon');
-                                        geo.options.set('iconColor', '#ffdb4d');
+                                        if (user) {
+                                            geo.options.set('iconColor', '#ffdb4d');
+                                        } else {
+                                            geo.options.set('iconColor', '#f45c41');                                            
+                                        }
                                         this.map.geoObjects.add(geo);
                                         let meta = geo.properties.get('metaDataProperty').GeocoderMetaData,
                                             answ = {

@@ -37,6 +37,10 @@
                 &.user {
                     background-color: $main_color;
                 }
+                &.computer {
+                    background-color: #ff765e;
+                    padding: 4px;
+                }
                 width: 71px;
                 padding: 3px;
                 text-align: center;

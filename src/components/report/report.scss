@@ -1,0 +1,88 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.report {
+    margin: 0 auto;
+    
+    .report__header {
+        text-align: center;
+        color: grey;
+        font-size: 24px;
+        padding-bottom: 12px;
+    }
+
+    .report__container {
+        display: flex;
+        justify-content: space-between;
+
+        .report-user__header, .report-computer__header {
+            font-size: 18px;
+            text-align: center;
+            color: grey;
+        }
+
+        .report-user__list, .report-computer__list {
+            padding: 0;
+            list-style: none;
+
+            .list__item {
+                padding: 11px;
+                display: flex;
+                font-size: 13px;
+                justify-content: space-between;
+                @include shadow_light();
+                margin-top: 2px;
+
+                .list-item__type {
+                    &.user {
+                        background-color: $main_color;
+                    }
+                    width: 71px;
+                    padding: 3px;
+                    text-align: center;
+                }
+
+                .list-item__answer {
+                    padding: 3px 6px;
+                    width: 125px;
+                }
+
+                .list-item__meta {
+                    display: flex;
+                    color: grey;
+                    padding: 3px;
+
+                    .meta__text {
+                        overflow: hidden;
+                        width: 215px;
+                        height: 14px;
+                    }
+
+                    .meta__date {
+                        width: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .button-container {
+        width: 100%;
+        text-align: center;
+        margin-top: 12px;
+        
+        .button {
+            width: 170px;
+            height: 35px;
+            margin-top: 5px;
+            background-color: $btn_color;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+
+            &:hover {
+                cursor: pointer
+            }
+        }
+    }
+}

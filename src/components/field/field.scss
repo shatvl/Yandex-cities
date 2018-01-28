@@ -65,6 +65,19 @@
                 cursor: pointer
             }
         }
+
+        .show-report {
+            text-align: center;
+            color: grey;
+            font-size: 14px;
+            padding-top: 5px;
+
+            &:hover {
+                text-decoration: underline;
+                color: black;
+                cursor: pointer;
+            }
+        }
     }
 }
 
