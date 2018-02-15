@@ -1,7 +1,7 @@
 <template>
   <div class="report">
         <h3 class="report__header">
-            Игра завершена {{ groupedAnswers ? '(выиграл ' + (groupedAnswers[102] === groupedAnswers[101] ? 'компьютер)' : 'пользователь)') : '' }}. Результаты игры.
+            Игра завершена {{ groupedAnswers ? '(выиграл ' + (groupedAnswers[102] >= groupedAnswers[101] || !groupedAnswers[102] ? 'компьютер)' : 'пользователь)') : '' }}. Результаты игры.
         </h3>
         <div class="report__container">
             <div class="report-container__user">
